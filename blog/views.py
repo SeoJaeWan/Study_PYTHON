@@ -1,6 +1,5 @@
 from django.views.generic import ListView, DetailView
-from django.views.generic.dates import ArchiveIndexView, YearArchiveView, MonthArchiveView, DayArchiveView, TodayArchiveView
-
+from django.views.generic.dates import ArchiveIndexView, YearArchiveView, MonthArchiveView, DayArchiveView,  TodayArchiveView
 from blog.models import Post
 
 # List View
@@ -34,12 +33,14 @@ class PostYAV(YearArchiveView):
 
 class PostMAV(MonthArchiveView):
     model = Post
-    dete_field = 'modify_dt'
+    date_field = 'modify_dt'
+    month_format = '%m'
 
 
 class PostDAV(DayArchiveView):
     model = Post
     date_field = 'modify_dt'
+    month_format = '%m'
 
 
 class PostTAV(TodayArchiveView):
