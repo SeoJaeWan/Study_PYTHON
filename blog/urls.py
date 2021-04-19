@@ -27,5 +27,12 @@ urlpatterns = [
          views.PostDAV.as_view(), name='post_day_archive'),
 
     # Example : /blog/today
-    path('archive/today', views.PostTAV.as_view(), name='post_today_archive')
+    path('archive/today', views.PostTAV.as_view(), name='post_today_archive'),
+
+    # Example : /blog/tag/
+    path('tag/', views.TagCloudTV.as_view(), name='tag_cloud'),
+
+    # Example : /blog/tag/tagname
+    path('tag/<str:tag>/', views.TaggedObjectLV.as_view(),
+         name='tagged_object_list'),
 ]
