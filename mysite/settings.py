@@ -50,7 +50,7 @@ PROJECT_APPS = [
 
 PACKAGE_APPS = [
     'taggit.apps.TaggitAppConfig',
-    'taggit_templatetags2'
+    'taggit_templatetags2',
     'widget_tweaks'
 ]
 
